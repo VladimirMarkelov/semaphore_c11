@@ -1,0 +1,21 @@
+CC=gcc
+CFLAGS=-c -std=c11 -Wall -Wno-format -O2 -DNDEBUG -pedantic
+STDLIBS =
+GCCLIBS =
+LDFLAGS= -s $(STDLIBS) $(GCCLIBS)
+
+COMMON_SOURCES=semaphore.c
+COMMON_OBJECTS=$(COMMON_SOURCES:.c=.o)
+
+LIBRARY=semaphore
+LIBRARYFILE=libsemaphore.a
+AR=ar
+ARARGS=rcs
+RUNLIB=ranlib
+RUNLIBARGS=
+RM=del
+STRIP=strip --strip-unneeded
+MAKE?=mingw32-make.exe
+
+INC_PATH=-I../include
+LIB_PATH=-L. -L../lib
