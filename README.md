@@ -1,2 +1,2 @@
 # Semaphore with C11
-Semaphore
+The C standard C11 introduces conditional variables and mutexes. But it does not introduce semaphores. From the other hand, it is not hard to implement semaphore using existing stuff. Here is an example how to implement semaphore and a simple project of semaphore usage - "ring buffer". Unfortunately GCC still does not implement all new features including mutexes and conditional variables. I had to use 3rd-party threads implementation from https://github.com/jtsiomb/c11threads. This module uses pthreads.h that is not available on Windows for some configurations. At least the semaphore and the example should complile and run without any issue on Linux and Windows + MinGW-64bit.
